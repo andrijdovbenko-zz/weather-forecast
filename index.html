@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather forecast</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="shortcut icon" href="images/icon_min.png" type="image/x-icon">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+		
+		    <header class="container">
+		    	<img src="images/logo.png" alt="" id="logo">
+		    	<img src="images/icon.png" alt="" id="logo_min">
+				<form action="" id="form">
+					<input type="search" placeholder="Введіть назву населеного пункту" id="search">
+					<input type="button" value="Пошук" class="btn btn-success" id="search_button">
+					<!--<button class="btn btn-success" id="search_button_min"><i class="fa fa-search" aria-hidden="true"></i></button>-->
+				</form>
+		    	<div class="btn-group pull-right" id="language">
+		    		<button class="btn btn-warning dropdown-toggle" data-toggle="dropdown" id="button_language">Вибір мови <span class="caret"></span></button>
+		    		<ul class="dropdown-menu">
+		    			<li><a href="#">Українська</a></li>
+		    			<li><a href="#">Російська</a></li>
+		    			<li><a href="#">Англійська</a></li>
+		    		</ul>
+		    	</div>	
+		    </header>
+		<div class="container">
+		    	<div class="col-md-8">
+		    		<section>
+		    			<h2>Погода в місті <span id="city"></span></h2>
+		    			<div class="tabs">
+		    				<ul class="nav nav-tabs">
+		    					<li class="active "><a href="#tab1" data-toggle="tab" class="btn btn-info">Прогноз погоди на добу</a></li>
+		    					<li><a href="#tab2" data-toggle="tab" class="btn btn-info">Прогноз погоди на 5 діб</a></li>
+		    					<li><a href="#tab3" data-toggle="tab" class="btn btn-info">Прогноз на 2 тижні</a></li>
+		    				</ul>
+		    			</div>
+		    			<div class="tab-content">
+		    				<div class="tab-pane active animated bounceInUp" id="tab1">
+		    					<div class="data-pogoda">
+		    						<div id="div_1days">
+
+		    						</div>
+		    					</div>
+		    				</div>
+		    				<div class="tab-pane animated bounceInUp" id="tab2">
+		    					<div class="data-pogoda">
+									<div id="div_3days">
+
+		    						</div>
+		    					</div>
+		    				</div>
+		    				<div class="tab-pane animated bounceInUp" id="tab3">
+		    					<div class="data-pogoda">
+		    						<div id="div_7days">
+
+		    						</div>
+		    					</div>
+		    				</div>
+		    			</div>
+		    		</section>
+		    	</div>
+					<aside class="col-md-4">
+		    		<div class="panel-group" id="accordion">
+		    			<div class="panel panel-warning">
+		    				<div class="panel-heading">
+		    					<h4 class="panel-title">
+		    						<a href="#collapse-1" data-parent="#accordion" data-toggle="collapse">Погода в столиці</a>
+		    					</h4>
+		    				</div>
+		    				<div id="collapse-1" class="panel-collapse collapse in">
+		    					<div class="panel-body" >
+									<span><b>Київ: </b></span><img id="cloudimg_сurrent_Kyiv">
+		    						<p><i>Поточна температура: <span id="temp_сurrent_Kyiv"></span> &#8451;;</i></p>
+		    						<p><i>Тиск: <span id="pressure_сurrent_Kyiv"></span> hPa;</i></p>
+		    						<p><i>Вологість: <span id="humidity_сurrent_Kyiv"></span> %;</i></p>
+		    						<p><i>Швидкість вітру: <span id="windspeed_сurrent_Kyiv"></span>, м/с;</i></p>
+		    						<p><i>Хмарність: <span id="clouddescr_сurrent_Kyiv"></span>.</i></p>
+		    					</div>
+		    				</div>
+		    			</div>
+		    			<div class="panel panel-info">
+		    				<div class="panel-heading">
+		    					<h4 class="panel-title">
+		    						<a href="#collapse-2" data-parent="#accordion" data-toggle="collapse">Погода в областях України</a>
+		    					</h4>
+		    				</div>
+		    				<div id="collapse-2" class="panel-collapse collapse">
+		    					<div class="panel-body region_weather">
+		    						<div><span>Львів: </span><img id="cloudimg_сurrent_Lviv"> <span id="temp_сurrent_Lviv"></span> &#8451;</div>
+		    						<div><span>Донецьк: </span><img id="cloudimg_сurrent_Donetsk"> <span id="temp_сurrent_Donetsk"></span> &#8451;</div>
+		    						<div><span>Запоріжжя: </span><img id="cloudimg_сurrent_Zaporizhzhya"> <span id="temp_сurrent_Zaporizhzhya"></span> &#8451;</div>
+		    						<div><span>Одеса: </span><img id="cloudimg_сurrent_Odessa"> <span id="temp_сurrent_Odessa"></span> &#8451;</div>
+		    						<div><span>Тернопіль: </span><img id="cloudimg_сurrent_Ternopil"> <span id="temp_сurrent_Ternopil"></span> &#8451;</div>
+		    						<div><span>Рівне: </span><img id="cloudimg_сurrent_Rivne"> <span id="temp_сurrent_Rivne"></span> &#8451;</div>
+		    						<div><span>Херсон: </span><img id="cloudimg_сurrent_Kherson"> <span id="temp_сurrent_Kherson"></span> &#8451;</div>
+		    						<div><span>Луцьк: </span><img id="cloudimg_сurrent_Lutsk"> <span id="temp_сurrent_Lutsk"></span> &#8451;</div>
+		    						<div><span>Житомир: </span><img id="cloudimg_сurrent_Zhytomyr"> <span id="temp_сurrent_Zhytomyr"></span> &#8451;</div>
+		    					</div>
+		    				</div>
+		    			</div>
+		    			<div class="panel panel-danger">
+		    				<div class="panel-heading">
+		    					<h4 class="panel-title">
+		    						<a href="#collapse-3" data-parent="#accordion" data-toggle="collapse">Погода в світі</a>
+		    					</h4>
+		    				</div>
+		    				<div id="collapse-3" class="panel-collapse collapse">
+		    					<div class="panel-body world_weather">
+		    						<div><span>Дубаї: </span><img id="cloudimg_сurrent_Dubai"> <span id="temp_сurrent_Dubai"></span> &#8451;</div>
+		    						<div><span>Лондон: </span><img id="cloudimg_сurrent_London"> <span id="temp_сurrent_London"></span> &#8451;</div>
+		    						<div><span>Париж: </span><img id="cloudimg_сurrent_Paris"> <span id="temp_сurrent_Paris"></span> &#8451;</div>
+		    						<div><span>Москва: </span><img id="cloudimg_сurrent_Moscow"> <span id="temp_сurrent_Moscow"></span> &#8451;</div>
+		    						<div><span>Мехіко: </span><img id="cloudimg_сurrent_Mexico"> <span id="temp_сurrent_Mexico"></span> &#8451;</div>
+		    						<div><span>Пекін: </span><img id="cloudimg_сurrent_Pekin"> <span id="temp_сurrent_Pekin"></span> &#8451;</div>
+		    						<div><span>Сідней: </span><img id="cloudimg_сurrent_Sidney"> <span id="temp_сurrent_Sidney"></span> &#8451;</div>
+		    						<div><span>Варшава: </span><img id="cloudimg_сurrent_Warsaw"> <span id="temp_сurrent_Warsaw"></span> &#8451;</div>
+		    						<div><span>Мінськ: </span><img id="cloudimg_сurrent_Minsk"> <span id="temp_сurrent_Minsk"></span> &#8451;</div>
+		    					</div>
+		    				</div>
+		    			</div>
+		    			<div class="panel panel-success">
+		    				<div class="panel-heading">
+		    					<h4 class="panel-title">
+		    						<a href="#collapse-4" data-parent="#accordion" data-toggle="collapse">Гороскоп</a>
+		    					</h4>
+		    				</div>
+		    				<div id="collapse-4" class="panel-collapse collapse">
+		    					<div class="panel-body">
+		    						<div id="goroskop">
+			    						<a href="http://orakul.com/horoscope/astrologic/general/virgo/today.html"><button class="btn btn-info goroskop_button"><img src="images/zodiak/Virgo.ico"></button></a>
+			    						<a href="http://orakul.com/horoscope/astrologic/general/aries/today.html"><button class="btn btn-info goroskop_button"><img src="images/zodiak/Aries.ico"></button></a>
+			    						<a href="http://orakul.com/horoscope/astrologic/general/aquarius/today.html"><button class="btn btn-info goroskop_button"><img src="images/zodiak/Aquarius.ico"></button></a>
+			    						<a href="http://orakul.com/horoscope/astrologic/general/cancer/today.html"><button class="btn btn-info goroskop_button"><img src="images/zodiak/Cancer.ico"></button></a>
+			    						<a href="http://orakul.com/horoscope/astrologic/general/capricorn/today.html"><button class="btn btn-info goroskop_button"><img src="images/zodiak/Capricorn.ico"></button></a>
+			    						<a href="http://orakul.com/horoscope/astrologic/general/gemini/today.html"><button class="btn btn-info goroskop_button"><img src="images/zodiak/Gemini.ico"></button></a>
+			    						<a href="http://orakul.com/horoscope/astrologic/general/lion/today.html"><button class="btn btn-info goroskop_button"><img src="images/zodiak/Leo.ico"></button></a>
+			    						<a href="http://orakul.com/horoscope/astrologic/general/libra/today.html"><button class="btn btn-info goroskop_button"><img src="images/zodiak/Libra.ico"></button></a>
+			    						<a href="http://orakul.com/horoscope/astrologic/general/pisces/today.html"><button class="btn btn-info goroskop_button"><img src="images/zodiak/Pisces.ico"></button></a>
+			    						<a href="http://orakul.com/horoscope/astrologic/general/scorpio/today.html"><button class="btn btn-info goroskop_button"><img src="images/zodiak/Scorpio.ico"></button></a>
+			    						<a href="http://orakul.com/horoscope/astrologic/general/sagittarius/today.html"><button class="btn btn-info goroskop_button"><img src="images/zodiak/Sagittarius.ico"></button></a>
+			    						<a href="http://orakul.com/horoscope/astrologic/general/taurus/today.html"><button class="btn btn-info goroskop_button"><img src="images/zodiak/Taurus.ico"></button></a>
+		    						</div>
+		    					</div>
+		    				</div>
+		    			</div>
+		    		</div>
+		    	</aside>
+		</div>
+		<footer class="container">
+				<script type="text/javascript">
+					(function() {
+					  if (window.pluso)if (typeof window.pluso.start == "function") return;
+					  if (window.ifpluso==undefined) { 
+					  	window.ifpluso = 1;
+					    var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
+					    s.type = 'text/javascript'; s.charset='UTF-8'; s.async = true;
+					    s.src = ('https:' == window.location.protocol ? 'https' : 'http')  + '://share.pluso.ru/pluso-like.js';
+					    var h=d[g]('body')[0];
+					    h.appendChild(s);
+					  	}})();
+				</script>
+				<div class="pluso" data-background="transparent" data-options="big,round,line,horizontal,nocounter,theme=04" data-services="vkontakte,odnoklassniki,facebook,twitter,google," id="socicons"></div>	
+		</footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/ajax-script.js"></script>
+  </body>
+</html>

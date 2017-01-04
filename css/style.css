@@ -1,0 +1,158 @@
+
+header{
+	border: 1px solid #2e6da4;
+	min-height: 80px;
+	border-bottom-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+	background: linear-gradient(135deg, #d0e4f7 0%,#73b1e7 24%,#0a77d5 50%,#539fe1 79%,#87bcea 100%);
+ 	padding-top: 25px;
+}
+
+body{
+	background-image: url('../images/ava7patterns.png')
+}
+
+div.container{
+	padding-bottom: 80px;
+}
+
+
+#logo, #language, #form{
+	display: inline-block;
+}
+#logo{
+    margin: -17px 0 0 -5px;
+    position: absolute;
+	}
+
+#logo_min{
+	display: none;
+	position: absolute;
+}
+
+#search{
+	height: 32px;
+	width: 230px;
+}
+
+#form{
+	margin-left: 360px;
+}
+
+#search_button_min{
+	display: none;
+}
+
+#city{
+	text-transform: capitalize;
+}
+
+
+.data-pogoda{
+ 	background-color: #76dbf9;
+ 	border: 1px solid #4f99b7;
+ 	border-radius: 10px;
+ 	min-height: 300px;
+ 	margin: 10px;
+ 	max-width: 827px;
+ 	padding: 10px;
+}
+
+div.data-pogoda > p{
+	font-size: 25px;
+	margin-top: 200px;
+    text-align: center;
+}
+
+#div_1days > div, #div_3days > div, #div_7days > div {
+    background-color: white;
+    border: 1px solid #000000;
+    border-radius: 0px;
+    display: inline-block;
+    margin: 0px;
+    padding: 7px;
+    text-align: center;
+}
+
+#div_1days > div{
+	width: 25%;
+}
+
+#div_3days > div{
+	width: 20%;
+}
+
+#div_7days > div{
+	width: 20%;
+}
+
+#div_1days > div:hover, #div_3days > div:hover, #div_7days > div:hover {
+    background-color: #D9EDF7;
+}
+
+#div_1days img, #div_3days img, #div_7days img {
+	width: 80px;
+	height: 85px;
+}
+
+#accordion{
+	margin-top:115px;
+}
+
+.region_weather>div{
+	display: block;
+	min-width: 215px;
+	padding-left: 10px;
+}
+
+.region_weather>div:hover{
+	background-color: #D9EDF7;
+	border-radius: 9px
+}
+
+.world_weather>div{
+	display: block;
+	min-width: 215px;
+	padding-left: 10px;
+}
+
+.world_weather>div:hover{
+	background-color: #F2DEDE;
+	border-radius: 9px
+}
+.goroskop_button{
+   	display: inline-flex;
+    margin: 2px auto;
+    padding: 0;
+    width: 103px;
+}
+#goroskop{
+	padding: 0 auto;
+}
+
+button>img{
+   	height: 100px;
+    width: 100px;
+}
+
+footer{
+	border: 1px solid #2e6da4;
+	min-height: 80px;
+	border-top-right-radius: 15px;
+	border-top-left-radius: 15px;
+	background: linear-gradient(135deg, #d0e4f7 0%,#73b1e7 24%,#0a77d5 50%,#539fe1 79%,#87bcea 100%);
+ 	padding-top: 16px;
+ 	position:fixed;
+ 	bottom: 0;
+ 	left: calc(50% - 585px);
+}
+
+#creater{
+	float: left;
+}
+
+#socicons{
+    display: block;
+    margin: auto;
+    text-align: center;
+}
